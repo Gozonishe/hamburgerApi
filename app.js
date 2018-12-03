@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require ('./api/routes/products');
 const orderRoutes = require ('./api/routes/orders');
+const telegaRoutes = require ('./api/routes/telegramBot.js');
 
 //Mongoose DB
 mongoose.connect('mongodb://gozon:' + process.env.MONGO_ATLAS_PW + '@mydb-shard-00-00-fk8lc.mongodb.net:27017,mydb-shard-00-01-fk8lc.mongodb.net:27017,mydb-shard-00-02-fk8lc.mongodb.net:27017/test?ssl=true&replicaSet=myDB-shard-0&authSource=admin&retryWrites=true', 
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 //Routes which should handle requests
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/telegram', telegaRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
