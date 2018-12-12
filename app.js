@@ -55,7 +55,9 @@ app.use((error, req, res, next) => {
     });
 });
 
-app.get('/*', function(req, res) {
+app.get('*', function(req, res) {
+    console.log(path.join(__dirname, 'index.html'));
+    
     res.sendFile(path.join(__dirname, 'index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
