@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
                         info: doc.info,
                         request: {
                             type: 'GET',
-                            url: 'http://localhost:3000/products/' + doc._id
+                            url: 'https://snowstormapi.herokuapp.com/products' + doc._id
                         }
                     };
                 })
