@@ -68,7 +68,7 @@ router.post('/', (req, res, next) => {
                     info: result.info,
                     request: {
                         type: 'GET',
-                        url: 'http://localhost:3000/products/' + result._id
+                        url: 'https://snowstormapi.herokuapp.com/products' + result._id
                     }
                 }
             });
